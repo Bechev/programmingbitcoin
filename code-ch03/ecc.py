@@ -288,6 +288,18 @@ class ECCTest(TestCase):
             (47, 71, 117, 141, 60, 139),
             (143, 98, 76, 66, 47, 71),
         )
+        
+        for addition in additions:
+            x1 = FieldElement(addition[0], prime)
+            y1 = FieldElement(addition[1], prime)
+            x2 = FieldElement(addition[2], prime)
+            y2 = FieldElement(addition[3], prime)
+            x3 = FieldElement(addition[4], prime)
+            y3 = FieldElement(addition[5], prime)
+            p1 = Point(x1, y1, a, b)
+            p2 = Point(x2, y2, a, b)
+            p3 = Point(x3, y3, a, b)
+            return p3 == p1 + p2
 
         # loop over additions
         # initialize x's and y's as FieldElements
